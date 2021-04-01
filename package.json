@@ -11,9 +11,12 @@
     "url": "git+https://github.com/ambozz/magichome-web-control.git"
   },
   "author": "amboss",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/ambozz/magichome-web-control/issues"
   },
-  "homepage": "https://github.com/ambozz/magichome-web-control#readme"
+  "homepage": "https://github.com/ambozz/magichome-web-control#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
