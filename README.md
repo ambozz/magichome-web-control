@@ -1,7 +1,7 @@
 # magichome-web-control
 Control Magic Home devices using your Browser.
 
-#Setup
+# Setup
 - Download the Latest Release Source
 - Copy the Folder to a Device in the WIFI Network of the LED that has Node.js installed
 - Start the index.js file using:
@@ -16,6 +16,6 @@ node index.js
 - Enter the IP Address of the LED
 - Control your LED using the Browser
 
-#Information
+# Information
 The IP-Address has to be set every time you restart this tool. This will be changed in future versions.
 Only RGB and not RGBW LEDs are Supported currently.
