@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <base href="/page">
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script>
+		var colorPicker = new iro.ColorPicker("#picker", {
+			width: 750,
+			color: "#fff"
+		});
+		
+        var nextColor = "#ffffff";
+
+        var oldColor = "";
+
+        var t=setInterval(removeDelay,500);
+
+        var delay = false;
+
+        function removeDelay(){
+            delay = false;
+        }
+
+        function setNewColor(){
+            delay = true;
+            if(oldColor != nextColor){
+                oldColor = nextColor;
+                var http = new XMLHttpRequest();
+                http.open("POST", "/setcolor", true);
+                http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                var params = "color=" + nextColor; 
+                http.send(params);
+                http.onload = function() {
+                
+                }
+            }
+        }
+
+		colorPicker.on('color:change', function(color) {
+            nextColor = color.hexString;
+            if(!delay){
+                setNewColor();
+            }else{
+                var g = setInterval(function() {
+                    if(!delay){
+                        setNewColor();
+                        clearInterval(g);
+                    }
+                },500);
+            }
+		});
+	</script>
+  </head>
+  <body>
+	<center>
+    <div id="picker"></div>
+	</center>
+  </body>
+</html>
