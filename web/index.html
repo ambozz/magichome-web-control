@@ -11,46 +11,16 @@
 			width: 750,
 			color: "#fff"
 		});
-		
-        var nextColor = "#ffffff";
 
-        var oldColor = "";
-
-        var t=setInterval(removeDelay,500);
-
-        var delay = false;
-
-        function removeDelay(){
-            delay = false;
-        }
-
-        function setNewColor(){
-            delay = true;
-            if(oldColor != nextColor){
-                oldColor = nextColor;
+		colorPicker.on('color:change', function(color) {
                 var http = new XMLHttpRequest();
                 http.open("POST", "/setcolor", true);
                 http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                var params = "color=" + nextColor; 
+                var params = "color=" + color.hexString; 
                 http.send(params);
                 http.onload = function() {
                 
                 }
-            }
-        }
-
-		colorPicker.on('color:change', function(color) {
-            nextColor = color.hexString;
-            if(!delay){
-                setNewColor();
-            }else{
-                var g = setInterval(function() {
-                    if(!delay){
-                        setNewColor();
-                        clearInterval(g);
-                    }
-                },500);
-            }
 		});
 	</script>
   </head>
