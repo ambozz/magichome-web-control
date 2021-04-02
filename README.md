@@ -5,7 +5,7 @@ Control Magic Home devices using your Browser.
 ![Preview](https://raw.githubusercontent.com/ambozz/magichome-web-control/main/preview.png "Preview")
 
 # Setup
-- Download the Latest Release Source
+- Download the Latest Release Executable or Source
 - Copy the Folder to a Device in the WIFI Network of the LED that has Node.js installed
 - Start the index.js file using:
 ```
