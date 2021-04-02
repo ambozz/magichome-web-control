@@ -22,5 +22,13 @@
     "express": "^4.17.1",
     "magic-home": "^2.6.1",
     "path": "^0.12.7"
+  },
+  "pkg": {
+    "scripts": "**/*.js",
+    "assets": "web/**/*",
+    "outputPath": "dist"
+  },
+  "bin": {
+    "app": "index.js"
   }
 }
